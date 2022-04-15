@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
+    'neighbours.apps.NeighboursConfig',
+
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
