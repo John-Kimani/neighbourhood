@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from .forms import UserRegistrationForm
+from .forms import UserRegistrationForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -24,3 +24,16 @@ def userProfile(request):
     User profile view function
     '''
     return render(request, 'users/profile.html')
+
+@login_required()
+def update_user_profile(request):
+    '''
+    User profile view function
+    '''
+    user_form = UserUpdateForm()
+    profile_form = ProfileUpdateForm()
+    subject = {
+        'user_form': user_form,
+        'profile_form': profile_form,
+    }
+    return render(request, 'users/update_profile.html', subject)
