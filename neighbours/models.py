@@ -21,6 +21,14 @@ class Neighborhood(models.Model):
     
     def delete_neighborhood(self):
         self.delete()
+    
+    @classmethod
+    def display_neighborhoods(cls):
+        '''
+        Function that displays neighborhoods
+        '''
+        neighborhoods = cls.objects.all()
+        return neighborhoods
 
 class Business(models.Model):
     '''

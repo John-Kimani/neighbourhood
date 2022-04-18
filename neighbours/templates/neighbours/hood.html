@@ -1,5 +1,26 @@
 {% extends 'neighbours/base.html' %}
 
 {% block content %}
-    <p>hood It works</p>
+<div class="container-fluid">
+    <div class="row mt-4 ml-5">
+        {% for hood in hoods %}
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="card-columns">
+                <div class="card" style="width: 25rem;">
+                    <a href="#"><img src="{{ hood.hood_img.url }}" alt="" class="card-img-top img-thumbnail" style="max-height: 25rem; object-fit: cover; object-position: center;"></a>
+                       <legend class="text-center">
+                        Neighborhood: {{ hood.name }}
+                       </legend> 
+                    <div class="card-body">
+                        <p>{{ hood.description }}</p>
+                    </div>
+                    <div class="card-footer">
+                        Location: {{ hood.location }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

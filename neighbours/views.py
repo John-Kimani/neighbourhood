@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Neighborhood,Business
 
 def homepage(request):
     '''
@@ -11,7 +12,8 @@ def neighboorhood(request):
     '''
     Nighbourhood view function
     '''
-    return render(request, 'neighbours/hood.html')
+    neighborhood = Neighborhood.display_neighborhoods() 
+    return render(request, 'neighbours/hood.html', {'hoods':neighborhood})
 
 def business(request):
     '''
