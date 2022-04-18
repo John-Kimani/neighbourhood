@@ -6,13 +6,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{% url 'homepage' %}">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Explore</a>
+          <a class="nav-link" href="{% url 'hoodpage' %}">Neighbourhood</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Create</a>
+          <a class="nav-link" href="{% url 'businesspage' %}">Business</a>
         </li>
         <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
