@@ -10,10 +10,19 @@ def homepage(request):
 
 def neighboorhood(request):
     '''
-    Nighbourhood view function
+    Neighbourhood view function
     '''
     neighborhood = Neighborhood.display_neighborhoods() 
     return render(request, 'neighbours/hood.html', {'hoods':neighborhood})
+
+
+def view_hood(request, neighborhood_id):
+    '''
+    View hood view function
+    '''
+    hood = Neighborhood.objects.get(pk = neighborhood_id)
+    return render(request, 'neighbours/single-hood.html', {"hood":hood})
+
 
 def business(request):
     '''

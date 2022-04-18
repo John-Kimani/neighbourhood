@@ -7,7 +7,7 @@
         <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="card-columns">
                 <div class="card" style="width: 25rem;">
-                    <a href="#"><img src="{{ hood.hood_img.url }}" alt="" class="card-img-top img-thumbnail" style="max-height: 25rem; object-fit: cover; object-position: center;"></a>
+                    <a href="{% url 'singlehood' neighborhood.id %}"><img src="{{ hood.hood_img.url }}" alt="" class="card-img-top img-thumbnail" style="max-height: 25rem; object-fit: cover; object-position: center;"></a>
                        <legend class="text-center">
                         Neighborhood: {{ hood.name }}
                        </legend> 
@@ -15,7 +15,15 @@
                         <p>{{ hood.description }}</p>
                     </div>
                     <div class="card-footer">
-                        Location: {{ hood.location }}
+                        <div class="row">
+                            <div class="col-md-6 pt-2">
+                                <p>Location: {{ hood.location }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="" class="btn btn-success">Join Neighborhood</a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

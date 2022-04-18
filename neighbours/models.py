@@ -30,6 +30,10 @@ class Neighborhood(models.Model):
         neighborhoods = cls.objects.all()
         return neighborhoods
 
+    @classmethod
+    def get_hood(cls, pk):
+        return cls.objects.get(id=pk)
+
 class Business(models.Model):
     '''
     Businesses class
@@ -49,7 +53,7 @@ class Business(models.Model):
 
     def delete_business(self):
         self.delete()
-
+    
 
 class Post(models.Model):
     '''
