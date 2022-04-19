@@ -23,6 +23,12 @@ def view_hood(request, neighborhood_id):
     hood = Neighborhood.objects.get(pk = neighborhood_id)
     return render(request, 'neighbours/single-hood.html', {"hood":hood})
 
+def join_hood(request):
+    '''
+    Join neighborhood view function
+    '''
+    return render(request, 'neighbours/join-hood.html')
+
 
 def business(request):
     '''
