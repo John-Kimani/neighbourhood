@@ -68,7 +68,7 @@ class Post(models.Model):
     '''
     Timeline messages class
     '''
-    title = models.CharField(max_length=20)
+    title = models.CharField(max_length=40)
     author = models.ForeignKey(Profile, on_delete=models.CASCADE)
     hood = models.ForeignKey(Neighborhood, on_delete=models.CASCADE, related_name='posts')
     message = models.TextField()

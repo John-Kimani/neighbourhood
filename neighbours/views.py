@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Neighborhood,Business
+from .models import Neighborhood,Business,Post
 from .forms import HoodRegistrationForm, BusinessRegistrationForm
 
 def homepage(request):
@@ -58,4 +58,5 @@ def timeline(request):
     '''
     Timeline view function
     '''
-    return render(request, 'neighbours/timeline.html')
+    posts = Post.objects.all()
+    return render(request, 'neighbours/timeline.html', {'posts':posts})
