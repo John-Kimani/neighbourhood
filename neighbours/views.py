@@ -53,3 +53,9 @@ def view_business(request, business_id):
     '''
     business = Business.objects.get(pk = business_id)
     return render(request, 'neighbours/single-business.html', {'business':business})
+
+def timeline(request):
+    '''
+    Timeline view function
+    '''
+    return render(request, 'neighbours/timeline.html')
