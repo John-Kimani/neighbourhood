@@ -1,5 +1,5 @@
 from django import forms
-from .models import Neighborhood, Business
+from .models import Neighborhood, Business, Hood
 
 
 class HoodRegistrationForm(forms.ModelForm):
@@ -7,7 +7,7 @@ class HoodRegistrationForm(forms.ModelForm):
     Hood registration form
     '''
     class Meta:
-        model = Neighborhood
+        model = Hood
         fields = '__all__'
 
 

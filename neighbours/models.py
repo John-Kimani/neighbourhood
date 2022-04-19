@@ -34,6 +34,17 @@ class Neighborhood(models.Model):
     def get_hood(cls, pk):
         return cls.objects.get(id=pk)
 
+class Hood(models.Model):
+    '''
+    Class that assigns users a neighborhood
+    '''
+    name = models.ForeignKey(User, on_delete=models.CASCADE)
+    location = models.ForeignKey(Neighborhood, on_delete=models.CASCADE)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.name
+
 class Business(models.Model):
     '''
     Businesses class

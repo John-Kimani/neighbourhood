@@ -2,13 +2,13 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="container-fluid">
+<div class="container-fluid container">
     <div class="row">
         <div class="col-md-6">
             <form action="" method="POST">
                 {% csrf_token %}
                 <fieldset class="form-group">
-                    <legend class="border-bottom mb-4">Register To a neighborhood</legend>
+                    <legend class="border-bottom mb-4">Welcome to this neighbourhood</legend>
                     {{ form|crispy }}
                     <div class="form-group">
                         <button class="btn btn-outline-info" type="submit">Sign Up</button>
@@ -17,16 +17,15 @@
             </form>
         </div>
         <div class="col-md-6">
-            <form action="" method="POST">
-                {% csrf_token %}
-                <fieldset class="form-group">
-                    <legend class="border-bottom mb-4">Register you business</legend>
-                    {{ form|crispy }}
-                    <div class="form-group">
-                        <button class="btn btn-outline-info" type="submit">Sign Up</button>
-                    </div>
-                </fieldset>
-            </form>
+            <h4>About this neighbourhood</h4>
+            <div class="card">
+                <img class="card-img-top" src="..." alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Explore</a>
+                </div>
+              </div>
         </div>
     </div>
 </div>
