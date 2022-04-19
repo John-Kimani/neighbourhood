@@ -29,4 +29,6 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
     path('profile/', user_views.userProfile, name='profile'),
     path('update_profile/', user_views.update_user_profile, name='update_profile'),
+    #extension
+    path('home/', include('users.urls')),
 ]

@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 from .forms import UserRegistrationForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from neighbours.models import Post
 
 def register(request):
     '''
@@ -46,3 +47,10 @@ def update_user_profile(request):
         'profile_form': profile_form,
     }
     return render(request, 'users/update_profile.html', subject)
+
+def home_news(request):
+    '''
+    Stay on the loop with home news
+    '''
+    news = Post.objects.all()
+    return render(request, 'users/home-news.html', {"news":news})

@@ -1,0 +1,18 @@
+{% extends 'neighbours/base.html' %}
+
+{% block content %}
+    <div class="container container-fluid">
+        {% for post in news %}
+        <div class="card mt-3" style="width: 100%;">
+            <div class="card-body">
+              <h5 class="card-title">{{ post.title }}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Author:{{ post.author }}</h6>
+              <p class="card-text">{{ post.message }}</p>
+            </div>
+            <div class="card-footer">
+                <small>Posted on: {{ post.created }}</small>
+            </div>
+          </div>
+          {% endfor %}
+    </div>
+{% endblock %}
