@@ -58,6 +58,10 @@ class Business(models.Model):
     def display_business(cls):
         business = cls.objects.all()
         return business
+
+    @classmethod
+    def get_business(cls, pk):
+        return cls.objects.get(id=pk)
     
 
 class Post(models.Model):

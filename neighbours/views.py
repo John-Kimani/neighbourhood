@@ -22,7 +22,8 @@ def view_hood(request, neighborhood_id):
     View hood view function
     '''
     hood = Neighborhood.objects.get(pk = neighborhood_id)
-    return render(request, 'neighbours/single-hood.html', {"hood":hood})
+    business = Business.objects.filter(neighborhood = hood).first()
+    return render(request, 'neighbours/single-hood.html', {"hood":hood, 'business':business})
 
 def join_hood(request):
     '''
@@ -45,3 +46,10 @@ def register_business(request):
     '''
     form = BusinessRegistrationForm()
     return render(request, 'neighbours/register-business.html', {'form':form})
+
+def view_business(request, business_id):
+    '''
+    View a business
+    '''
+    business = Business.objects.get(pk = business_id)
+    return render(request, 'neighbours/single-business.html', {'business':business})
