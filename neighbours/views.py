@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Neighborhood,Business
+from .forms import HoodRegistrationForm
 
 def homepage(request):
     '''
@@ -27,7 +28,8 @@ def join_hood(request):
     '''
     Join neighborhood view function
     '''
-    return render(request, 'neighbours/join-hood.html')
+    form = HoodRegistrationForm()
+    return render(request, 'neighbours/join-hood.html', {'form':form})
 
 
 def business(request):
