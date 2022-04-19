@@ -48,6 +48,7 @@ def update_user_profile(request):
     }
     return render(request, 'users/update_profile.html', subject)
 
+@login_required()
 def home_news(request):
     '''
     Stay on the loop with home news

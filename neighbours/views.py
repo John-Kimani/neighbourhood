@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from .models import Neighborhood,Business,Post, Hood
 from .forms import HoodRegistrationForm, BusinessRegistrationForm
+from django.contrib.auth.decorators import login_required
 
 def homepage(request):
     '''
@@ -17,6 +18,7 @@ def neighboorhood(request):
     return render(request, 'neighbours/hood.html', {'hoods':neighborhood})
 
 
+@login_required()
 def view_hood(request, neighborhood_id):
     '''
     View hood view function
@@ -25,6 +27,7 @@ def view_hood(request, neighborhood_id):
     business = Business.objects.filter(neighborhood = hood).first()
     return render(request, 'neighbours/single-hood.html', {"hood":hood, 'business':business})
 
+@login_required()
 def join_hood(request, neighborhood_id):
     '''
     Join neighborhood view function
@@ -46,6 +49,7 @@ def join_hood(request, neighborhood_id):
     return render(request, 'neighbours/join-hood.html', {'form':form, "hood":hood})
 
 
+@login_required()
 def business(request):
     '''
     Business view function
@@ -53,6 +57,7 @@ def business(request):
     business = Business.display_business()
     return render(request, 'neighbours/business.html', {'business':business})
 
+@login_required()
 def register_business(request):
     '''
     Register business
