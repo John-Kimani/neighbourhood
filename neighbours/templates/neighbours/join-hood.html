@@ -23,7 +23,7 @@
                     <div class="card-body">
                     <h5 class="card-title">Name: {{ hood.name }}</h5>
                     <p class="card-text">{{ hood.description }}</p>
-                    <a href="#" class="btn btn-success">Explore</a>
+                    <a href="{% url 'singlehood' hood.id%}" class="btn btn-success">Explore</a>
                 </div>
               </div>
         </div>
