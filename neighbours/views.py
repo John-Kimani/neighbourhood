@@ -34,7 +34,8 @@ def join_hood(request, neighborhood_id):
         form = HoodRegistrationForm(request.POST)
         if form.is_valid():
             new_member = Hood()
-            new_member.name = form.cleaned_data['name']
+            new_member.estate = form.cleaned_data['estate']
+            new_member.occupant = form.cleaned_data['occupant']
             new_member.location = form.cleaned_data['location']
             new_member.message = form.cleaned_data['message']
             new_member.save()

@@ -38,12 +38,13 @@ class Hood(models.Model):
     '''
     Class that assigns users a neighborhood
     '''
-    name = models.ForeignKey(User, on_delete=models.CASCADE)
+    estate = models.CharField(max_length=40, blank=True, null=False)
+    occupant = models.ForeignKey(User, on_delete=models.CASCADE)
     location = models.ForeignKey(Neighborhood, on_delete=models.CASCADE)
     message = models.TextField(default='Tell us a little bit about yourself')
 
     def __str__(self):
-        return self.name
+        return self.estate
 
 class Business(models.Model):
     '''
