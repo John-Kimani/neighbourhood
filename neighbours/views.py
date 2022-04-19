@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Neighborhood,Business
-from .forms import HoodRegistrationForm
+from .forms import HoodRegistrationForm, BusinessRegistrationForm
 
 def homepage(request):
     '''
@@ -38,3 +38,10 @@ def business(request):
     '''
     business = Business.display_business()
     return render(request, 'neighbours/business.html', {'business':business})
+
+def register_business(request):
+    '''
+    Register business
+    '''
+    form = BusinessRegistrationForm()
+    return render(request, 'neighbours/register-business.html', {'form':form})

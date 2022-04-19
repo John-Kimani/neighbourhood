@@ -2,6 +2,12 @@
 
 {% block content %}
 <div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <h4 class="mt-3">Are you a business owner? and would you like to be part of our community? <a href="{% url 'registerbusiness' %}" class="btn btn-success">Register your business here</a></h4>
+        </div>
+    </div>
+
     <div class="row mt-4 ml-5">
         {% for business in business %}
         <div class="col-lg-4 col-md-4 col-sm-12">
@@ -21,7 +27,6 @@
                                 <p>Owner: {{ business.owner }}</p>
                             </div>
                             <div class="col-md-6">
-                                <!-- <a href="#" class="btn btn-success">Contact</a> -->
                                 <p>Contact: {{ business.contact }}</p>
                             </div>
                         </div>
