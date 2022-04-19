@@ -40,7 +40,7 @@ class Hood(models.Model):
     '''
     name = models.ForeignKey(User, on_delete=models.CASCADE)
     location = models.ForeignKey(Neighborhood, on_delete=models.CASCADE)
-    message = models.TextField()
+    message = models.TextField(default='Tell us a little bit about yourself')
 
     def __str__(self):
         return self.name
