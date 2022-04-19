@@ -1,6 +1,33 @@
 {% extends 'neighbours/base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
-    <p>This works</p>
-    {{form}}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Register To a neighborhood</legend>
+                    {{ form|crispy }}
+                    <div class="form-group">
+                        <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Register you business</legend>
+                    {{ form|crispy }}
+                    <div class="form-group">
+                        <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}

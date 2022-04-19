@@ -1,5 +1,36 @@
 {% extends 'neighbours/base.html' %}
 
 {% block content %}
-    <p>business It works</p>
+<div class="container-fluid">
+    <div class="row mt-4 ml-5">
+        {% for business in business %}
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="card-columns">
+                <div class="card" style="width: 28rem;">
+                    <a href="#"><img src="{{ business.business_img.url }}" alt="" class="card-img-top img-thumbnail" style="max-height: 25rem; object-fit: cover; object-position: center;"></a>
+                       <legend class="text-center">
+                        Business Name: {{ business.name }}
+                       </legend> 
+                       <p class="text-center">Location: {{ business.neighborhood }}</p>
+                    <div class="card-body">
+                        <p>{{ business.description }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-md-6 pt-2">
+                                <p>Owner: {{ business.owner }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- <a href="#" class="btn btn-success">Contact</a> -->
+                                <p>Contact: {{ business.contact }}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

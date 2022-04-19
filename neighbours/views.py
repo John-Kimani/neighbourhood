@@ -36,4 +36,5 @@ def business(request):
     '''
     Business view function
     '''
-    return render(request, 'neighbours/business.html')
+    business = Business.display_business()
+    return render(request, 'neighbours/business.html', {'business':business})

@@ -54,6 +54,11 @@ class Business(models.Model):
     def delete_business(self):
         self.delete()
     
+    @classmethod
+    def display_business(cls):
+        business = cls.objects.all()
+        return business
+    
 
 class Post(models.Model):
     '''
