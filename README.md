@@ -11,8 +11,8 @@ This is a web application that intends to connect people living within similar c
 + [Behaviour Driven Development](#behavior-driven-development)
 + [Authors Info](#author)
 ## App screenshot
-![Neighborhood]()
-![Neighborhood]()
+![Neighborhood](/static/assets/homepage.png)
+![Neighborhood](/static/assets/userprofile.png)
 ## Features
 
 - Django 4.0+

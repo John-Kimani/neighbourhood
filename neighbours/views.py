@@ -78,6 +78,7 @@ def register_business(request):
         form = BusinessRegistrationForm()
     return render(request, 'neighbours/register-business.html', {'form':form})
 
+@login_required()
 def view_business(request, business_id):
     '''
     View a business
@@ -85,6 +86,7 @@ def view_business(request, business_id):
     business = Business.objects.get(pk = business_id)
     return render(request, 'neighbours/single-business.html', {'business':business})
 
+@login_required()
 def timeline(request):
     '''
     Timeline view function
